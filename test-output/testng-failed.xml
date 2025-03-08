@@ -3,15 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="webdriver.Topic_01_CheckEnvironment">
+      <class name="webdriver.TC07_DemoAxes">
         <methods>
-          <include name="TC_01_Url"/>
-          <include name="afterClass"/>
-          <include name="TC_02_Logo"/>
-          <include name="TC_03_Form"/>
           <include name="beforeClass"/>
+          <include name="afterClass"/>
+          <include name="TC_07_DemoAxes4"/>
         </methods>
-      </class> <!-- webdriver.Topic_01_CheckEnvironment -->
+      </class> <!-- webdriver.TC07_DemoAxes -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
