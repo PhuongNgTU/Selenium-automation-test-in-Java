@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-21T12:23:12Z" name="Default suite" finished-at="2024-05-21T12:23:16Z" duration-ms="4508">
+  <suite started-at="2025-03-08T07:45:20Z" name="Default suite" finished-at="2025-03-08T07:45:26Z" duration-ms="6181">
     <groups>
     </groups>
-    <test started-at="2024-05-21T12:23:12Z" name="Default test" finished-at="2024-05-21T12:23:16Z" duration-ms="4508">
-      <class name="webdriver.Topic_01_CheckEnvironment">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:webdriver.Topic_01_CheckEnvironment@543295b0]" started-at="2024-05-21T12:23:12Z" name="beforeClass" finished-at="2024-05-21T12:23:15Z" duration-ms="3514" status="PASS">
+    <test started-at="2025-03-08T07:45:20Z" name="Default test" finished-at="2025-03-08T07:45:26Z" duration-ms="6181">
+      <class name="webdriver.TC07_DemoAxes">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:webdriver.TC07_DemoAxes@3e8c3cb]" started-at="2025-03-08T07:45:20Z" name="beforeClass" finished-at="2025-03-08T07:45:25Z" duration-ms="5357" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="TC_01_Url()[pri:0, instance:webdriver.Topic_01_CheckEnvironment@543295b0]" started-at="2024-05-21T12:23:15Z" name="TC_01_Url" finished-at="2024-05-21T12:23:15Z" duration-ms="11" status="PASS">
+        <test-method signature="TC_07_DemoAxes()[pri:0, instance:webdriver.TC07_DemoAxes@3e8c3cb]" started-at="2025-03-08T07:45:25Z" name="TC_07_DemoAxes" finished-at="2025-03-08T07:45:25Z" duration-ms="50" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC_01_Url -->
-        <test-method signature="TC_02_Logo()[pri:0, instance:webdriver.Topic_01_CheckEnvironment@543295b0]" started-at="2024-05-21T12:23:15Z" name="TC_02_Logo" finished-at="2024-05-21T12:23:16Z" duration-ms="58" status="PASS">
+        </test-method> <!-- TC_07_DemoAxes -->
+        <test-method signature="TC_07_DemoAxes2()[pri:0, instance:webdriver.TC07_DemoAxes@3e8c3cb]" started-at="2025-03-08T07:45:25Z" name="TC_07_DemoAxes2" finished-at="2025-03-08T07:45:25Z" duration-ms="18" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC_02_Logo -->
-        <test-method signature="TC_03_Form()[pri:0, instance:webdriver.Topic_01_CheckEnvironment@543295b0]" started-at="2024-05-21T12:23:16Z" name="TC_03_Form" finished-at="2024-05-21T12:23:16Z" duration-ms="54" status="PASS">
+        </test-method> <!-- TC_07_DemoAxes2 -->
+        <test-method signature="TC_07_DemoAxes3()[pri:0, instance:webdriver.TC07_DemoAxes@3e8c3cb]" started-at="2025-03-08T07:45:25Z" name="TC_07_DemoAxes3" finished-at="2025-03-08T07:45:25Z" duration-ms="22" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC_03_Form -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:webdriver.Topic_01_CheckEnvironment@543295b0]" started-at="2024-05-21T12:23:16Z" name="afterClass" finished-at="2024-05-21T12:23:16Z" duration-ms="856" status="PASS">
+        </test-method> <!-- TC_07_DemoAxes3 -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:webdriver.TC07_DemoAxes@3e8c3cb]" started-at="2025-03-08T07:45:25Z" name="afterClass" finished-at="2025-03-08T07:45:26Z" duration-ms="726" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- webdriver.Topic_01_CheckEnvironment -->
+      </class> <!-- webdriver.TC07_DemoAxes -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

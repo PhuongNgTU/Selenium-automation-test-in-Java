@@ -15,11 +15,11 @@ public class Topic_01_CheckEnvironment {
 	String projectPath = System.getProperty("user.dir");
 	String osName = System.getProperty("os.name");
 
-	
 	@BeforeClass
 	public void beforeClass() {
 		if (osName.contains("Windows")) {
-			String url = System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
+			String url = System.setProperty("webdriver.gecko.driver",
+					projectPath + "\\browserDrivers\\geckodriver.exe");
 			System.out.println(url);
 		} else {
 			System.setProperty("webdriver.gecko.driver", projectPath + "/browserDrivers/geckodriver");
@@ -43,6 +43,11 @@ public class Topic_01_CheckEnvironment {
 
 	@Test
 	public void TC_03_Form() {
+		Assert.assertTrue(driver.findElement(By.xpath("//form[@data-testid='royal_login_form']")).isDisplayed());
+	}
+	
+	@Test
+	public void TC_04_Form() {
 		Assert.assertTrue(driver.findElement(By.xpath("//form[@data-testid='royal_login_form']")).isDisplayed());
 	}
 
