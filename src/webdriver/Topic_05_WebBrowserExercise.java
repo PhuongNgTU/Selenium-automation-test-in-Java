@@ -24,7 +24,7 @@ public class Topic_05_WebBrowserExercise {
 		}
 		
 		driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); //Wait này chỉ áp dụng cho việc tìm element, ko áp dụng cho việc chuyển trang
 		driver.manage().window().maximize();
 	}
 	

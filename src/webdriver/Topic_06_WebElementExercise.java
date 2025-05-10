@@ -14,12 +14,14 @@ public class Topic_06_WebElementExercise {
 	String projectPath = System.getProperty("user.dir");
 	String osName = System.getProperty("os.name");
 	
-	//Define reused element into global variable by using 'By' variable
-	By emailTextbox = By.xpath("//input[@id='mail']");
-	By ageUnder18Radio = By.xpath("//input[@id='under_18']");
-	By eduTextArea = By.xpath("//input[@id='edu']");
+	//Define reused element into global variable by using 'By' variable	
+	By emailTextbox = By.id("mail");
+	By ageUnder18Radio = By.cssSelector("#under_18");
+	By eduTextArea = By.cssSelector("#edu");
 	By user5Text = By.xpath("//h5[text()='Name: User5']");
-
+	By pwdTextbox = By.cssSelector("#disable_password");
+	By biographyTextArea = By.cssSelector("#bio");
+	
 	@BeforeTest
 	public void beforeClass() {
 		if (osName.contains("Windows")) {
@@ -34,7 +36,7 @@ public class Topic_06_WebElementExercise {
 	}
 	
 	@Test
-	public void TC_01_() {
+	public void TC_01_Displayed() {
 		driver.get("https://automationfc.github.io/basic-form/index.html");
 		
 		//Text box
@@ -68,6 +70,32 @@ public class Topic_06_WebElementExercise {
 			System.out.println("user5Text is not displayed");
 		}
 	}
+	
+	@Test
+	public void TC_02_Enabled() {
+		driver.get("https://automationfc.github.io/basic-form/index.html");
+		
+		if(driver.findElement(pwdTextbox).isEnabled()) {
+			System.out.println("password textbox is enabled");
+		} else {
+			System.out.println("password textbox is disabled");
+		}
+		
+		if(driver.findElement(biographyTextArea).isEnabled()) {
+			System.out.println("biography text area is enabled");
+		} else {
+			System.out.println("biography text area is disabled");
+		}
+		
+		if(driver.findElement(emailTextbox).isEnabled()) {
+			System.out.println("email textbox is enabled");
+		} else {
+			System.out.println("email textbox is disabled");
+		}
+	}
+	
+	@Test
+	public void TC_03_Selected() {}
 	
 	public void sleepInSeconds(long timeInSecond) {
 		try {
