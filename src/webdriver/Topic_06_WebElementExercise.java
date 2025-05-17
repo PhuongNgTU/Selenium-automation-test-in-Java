@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -21,6 +22,7 @@ public class Topic_06_WebElementExercise {
 	By user5Text = By.xpath("//h5[text()='Name: User5']");
 	By pwdTextbox = By.cssSelector("#disable_password");
 	By biographyTextArea = By.cssSelector("#bio");
+	By developmentCheckbox = By.cssSelector("#development");
 	
 	@BeforeTest
 	public void beforeClass() {
@@ -95,7 +97,22 @@ public class Topic_06_WebElementExercise {
 	}
 	
 	@Test
-	public void TC_03_Selected() {}
+	public void TC_03_Selected() {
+		driver.get("https://automationfc.github.io/basic-form/index.html");
+		
+		//Verify checkbox/radio button hasn't been selected
+		Assert.assertFalse(driver.findElement(ageUnder18Radio).isSelected());
+		Assert.assertFalse(driver.findElement(developmentCheckbox).isSelected());
+		
+		//Click to checkbox/ridio button
+		driver.findElement(ageUnder18Radio).click();
+		driver.findElement(developmentCheckbox).click();
+		sleepInSeconds(3);
+		
+		//Verify checkbox/radio button has been selected
+		Assert.assertTrue(driver.findElement(ageUnder18Radio).isSelected());
+		Assert.assertTrue(driver.findElement(developmentCheckbox).isSelected());
+	}
 	
 	public void sleepInSeconds(long timeInSecond) {
 		try {
