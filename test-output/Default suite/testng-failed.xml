@@ -5,9 +5,9 @@
     <classes>
       <class name="webdriver.Topic_06_WebElementExercise">
         <methods>
+          <include name="TC_03_Selected"/>
           <include name="beforeClass"/>
           <include name="afterClass"/>
-          <include name="TC_01_"/>
         </methods>
       </class> <!-- webdriver.Topic_06_WebElementExercise -->
     </classes>
