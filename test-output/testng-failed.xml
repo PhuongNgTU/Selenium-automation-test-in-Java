@@ -5,8 +5,8 @@
     <classes>
       <class name="webdriver.Topic_06_WebElementExercise">
         <methods>
-          <include name="TC_03_Selected"/>
           <include name="beforeClass"/>
+          <include name="TC_04_MailChimp"/>
           <include name="afterClass"/>
         </methods>
       </class> <!-- webdriver.Topic_06_WebElementExercise -->
