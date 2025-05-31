@@ -1,10 +1,12 @@
 package webdriver;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -114,6 +116,24 @@ public class Topic_06_WebElementExercise {
 		Assert.assertTrue(driver.findElement(developmentCheckbox).isSelected());
 	}
 	
+	@Test
+	public void TC_04_MailChimp() {
+		driver.get("https://login.mailchimp.com/signup/");
+		
+		driver.findElement(By.id("email")).sendKeys("jean.tyderman2025@gmail.com");
+		
+		By passwordTextbox = By.id("new_password");
+		By signupButton = By.id("create-account-enabled");
+		driver.findElement(passwordTextbox).sendKeys("abc");
+		driver.findElement(By.id("onetrust-close-btn-container")).click();
+		sleepInSeconds(3);
+		driver.findElement(signupButton).click();
+		sleepInSeconds(3);
+		
+		//Assert
+		Assert.assertTrue(driver.findElement(By.xpath("//li[@class='lowercase-char completed']")).isDisplayed());
+	}
+	
 	public void sleepInSeconds(long timeInSecond) {
 		try {
 			Thread.sleep(timeInSecond * 1000);
@@ -126,4 +146,5 @@ public class Topic_06_WebElementExercise {
 	public void afterClass() {
 		driver.quit();
 	}
+
 }
