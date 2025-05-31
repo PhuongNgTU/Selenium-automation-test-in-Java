@@ -54,7 +54,7 @@ public class Topic_06_WebElementExercise {
 		//Text area
 		if(driver.findElement(eduTextArea).isDisplayed()) {
 			driver.findElement(eduTextArea).sendKeys("selenium grid");
-			System.out.println("eduTextArea is displayed");_
+			System.out.println("eduTextArea is displayed");
 		} else {
 			System.out.println("eduTextArea is not displayed");
 		}
