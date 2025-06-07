@@ -127,11 +127,44 @@ public class Topic_06_WebElementExercise {
 		driver.findElement(passwordTextbox).sendKeys("abc");
 		driver.findElement(By.id("onetrust-close-btn-container")).click();
 		sleepInSeconds(3);
+		driver.findElement(By.xpath("//input[@class='dijitReset dijitCheckBoxInput']")).click();
 		driver.findElement(signupButton).click();
 		sleepInSeconds(3);
 		
 		//Assert
 		Assert.assertTrue(driver.findElement(By.xpath("//li[@class='lowercase-char completed']")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//li[@class='uppercase-char not-completed']")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//li[@class='number-char not-completed']")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//li[@class='special-char not-completed']")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//li[@class='8-char not-completed']")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//li[@class='username-check completed']")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//input[@class='dijitReset dijitCheckBoxInput']")).isSelected());
+	}
+	
+	@Test
+	public void TC_05_MailChimp_SendUpperKeys() {
+		driver.get("https://login.mailchimp.com/signup/");
+		
+		driver.findElement(By.id("email")).sendKeys("jean.tyderman2025@gmail.com");
+		By passwordTextbox = By.id("new_password");
+		By signupButton = By.id("create-account-enabled");
+		String str = "abc";
+		driver.findElement(passwordTextbox).sendKeys(str.concat(str.toUpperCase()));
+		System.out.println(str.concat(str.toUpperCase()));
+		driver.findElement(By.id("onetrust-close-btn-container")).click();
+		sleepInSeconds(3);
+		driver.findElement(By.xpath("//input[@class='dijitReset dijitCheckBoxInput']")).click();
+		driver.findElement(signupButton).click();
+		sleepInSeconds(3);
+		
+		//Assert
+		Assert.assertTrue(driver.findElement(By.xpath("//li[@class='lowercase-char completed']")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//li[@class='uppercase-char completed']")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//li[@class='number-char not-completed']")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//li[@class='special-char not-completed']")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//li[@class='8-char not-completed']")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//li[@class='username-check completed']")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//input[@class='dijitReset dijitCheckBoxInput']")).isSelected());
 	}
 	
 	public void sleepInSeconds(long timeInSecond) {
