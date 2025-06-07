@@ -117,7 +117,7 @@ public class Topic_06_WebElementExercise {
 	}
 	
 	@Test
-	public void TC_04_MailChimp() {
+	public void TC_04_MailChimp_AssertPartialTrue() {
 		driver.get("https://login.mailchimp.com/signup/");
 		
 		driver.findElement(By.id("email")).sendKeys("jean.tyderman2025@gmail.com");
@@ -164,6 +164,26 @@ public class Topic_06_WebElementExercise {
 		Assert.assertTrue(driver.findElement(By.xpath("//li[@class='special-char not-completed']")).isDisplayed());
 		Assert.assertTrue(driver.findElement(By.xpath("//li[@class='8-char not-completed']")).isDisplayed());
 		Assert.assertTrue(driver.findElement(By.xpath("//li[@class='username-check completed']")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//input[@class='dijitReset dijitCheckBoxInput']")).isSelected());
+	}
+	
+	@Test
+	public void TC_06_MailChimp_AssertAllTrue() {
+		driver.get("https://login.mailchimp.com/signup/");
+		driver.findElement(By.id("email")).sendKeys("jean.tyderman2025");
+		By passwordTextbox = By.id("new_password");
+		By signupButton = By.id("create-account-enabled");
+		String str = "abc";
+		driver.findElement(passwordTextbox).sendKeys(str.concat(str.toUpperCase()).concat("2810").concat("@"));
+		System.out.println(str.concat(str.toUpperCase()).concat("2810").concat("@"));
+		driver.findElement(By.id("onetrust-close-btn-container")).click();
+		sleepInSeconds(3);
+		driver.findElement(By.xpath("//input[@class='dijitReset dijitCheckBoxInput']")).click();
+		driver.findElement(signupButton).click();
+		sleepInSeconds(3);
+
+		//Assert
+		Assert.assertTrue(driver.findElement(By.xpath("//input[@class='rounded-corners-4  av-password success-check']")).isDisplayed());
 		Assert.assertTrue(driver.findElement(By.xpath("//input[@class='dijitReset dijitCheckBoxInput']")).isSelected());
 	}
 	
