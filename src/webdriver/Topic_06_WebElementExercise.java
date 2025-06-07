@@ -142,7 +142,7 @@ public class Topic_06_WebElementExercise {
 	}
 	
 	@Test
-	public void TC_05_MailChimp_SendUpperKeys() {
+	public void TC_05_MailChimp_SendUpperKey() {
 		driver.get("https://login.mailchimp.com/signup/");
 		
 		driver.findElement(By.id("email")).sendKeys("jean.tyderman2025@gmail.com");

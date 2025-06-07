@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Mickeypoc\AppData\Local\Temp\testng-eclipse--1011867882\testng-customsuite.xml</span>
+                    <span>C:\Users\Mickeypoc\AppData\Local\Temp\testng-eclipse-1999760544\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,22 +102,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="webdriver.Topic_06_WebElementExercise" class="method navigator-link" hash-for-method="TC_01_Displayed">TC_01_Displayed</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="webdriver.Topic_06_WebElementExercise" class="method navigator-link" hash-for-method="TC_02_Enabled">TC_02_Enabled</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="webdriver.Topic_06_WebElementExercise" class="method navigator-link" hash-for-method="TC_03_Selected">TC_03_Selected</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="webdriver.Topic_06_WebElementExercise" class="method navigator-link" hash-for-method="TC_04_MailChimp">TC_04_MailChimp</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="webdriver.Topic_06_WebElementExercise" class="method navigator-link" hash-for-method="TC_05_MailChimp_SendUpperKeys">TC_05_MailChimp_SendUpperKeys</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -140,30 +125,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="TC_01_Displayed">
-                  </a> <!-- TC_01_Displayed -->
-                  <span class="method-name">TC_01_Displayed</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="TC_02_Enabled">
-                  </a> <!-- TC_02_Enabled -->
-                  <span class="method-name">TC_02_Enabled</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="TC_03_Selected">
-                  </a> <!-- TC_03_Selected -->
-                  <span class="method-name">TC_03_Selected</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="TC_04_MailChimp">
-                  </a> <!-- TC_04_MailChimp -->
-                  <span class="method-name">TC_04_MailChimp</span>
+                  <a name="TC_05_MailChimp_SendUpperKeys">
+                  </a> <!-- TC_05_MailChimp_SendUpperKeys -->
+                  <span class="method-name">TC_05_MailChimp_SendUpperKeys</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -171,7 +135,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Mickeypoc\AppData\Local\Temp\testng-eclipse--1011867882\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Mickeypoc\AppData\Local\Temp\testng-eclipse-1999760544\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -180,7 +144,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;webdriver.Topic_06_WebElementExercise&quot;/&gt;
+      &lt;class name=&quot;webdriver.Topic_06_WebElementExercise&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;TC_05_MailChimp_SendUpperKeys&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- webdriver.Topic_06_WebElementExercise --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -220,28 +188,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TC_04_MailChimp')
+data.setCell(0, 1, 'TC_05_MailChimp_SendUpperKeys')
 data.setCell(0, 2, 'webdriver.Topic_06_WebElementExercise')
-data.setCell(0, 3, 14923);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'TC_03_Selected')
-data.setCell(1, 2, 'webdriver.Topic_06_WebElementExercise')
-data.setCell(1, 3, 3665);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'TC_01_Displayed')
-data.setCell(2, 2, 'webdriver.Topic_06_WebElementExercise')
-data.setCell(2, 3, 1246);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'TC_02_Enabled')
-data.setCell(3, 2, 'webdriver.Topic_06_WebElementExercise')
-data.setCell(3, 3, 139);
+data.setCell(0, 3, 14878);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 19 seconds</span>
+              <span class="suite-total-time">Total running time: 14 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -256,9 +212,22 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">4 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">webdriver.Topic_06_WebElementExercise</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">TC_03_Selected</span>
+                <br/>
+                <span class="ignored-method-name">TC_02_Enabled</span>
+                <br/>
+                <span class="ignored-method-name">TC_01_Displayed</span>
+                <br/>
+                <span class="ignored-method-name">TC_04_MailChimp</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -273,24 +242,12 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">TC_01_Displayed</span>
-                <span class="method-start">1713 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">TC_02_Enabled</span>
-                <span class="method-start">2960 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">TC_03_Selected</span>
-                <span class="method-start">3100 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">TC_04_MailChimp</span>
-                <span class="method-start">6765 ms</span>
+                <span class="method-name">TC_05_MailChimp_SendUpperKeys</span>
+                <span class="method-start">1955 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">21689 ms</span>
+                <span class="method-start">16836 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
