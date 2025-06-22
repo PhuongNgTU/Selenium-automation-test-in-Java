@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-07T09:53:52Z" name="Default suite" finished-at="2025-06-07T09:54:10Z" duration-ms="17255">
+  <suite started-at="2025-06-22T07:46:04Z" name="Default suite" finished-at="2025-06-22T07:46:20Z" duration-ms="15570">
     <groups>
     </groups>
-    <test started-at="2025-06-07T09:53:52Z" name="Default test" finished-at="2025-06-07T09:54:10Z" duration-ms="17255">
-      <class name="webdriver.Topic_06_WebElementExercise">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:webdriver.Topic_06_WebElementExercise@4c60d6e9]" started-at="2025-06-07T09:53:52Z" name="beforeClass" finished-at="2025-06-07T09:53:54Z" duration-ms="1849" status="PASS">
+    <test started-at="2025-06-22T07:46:04Z" name="Default test" finished-at="2025-06-22T07:46:20Z" duration-ms="15570">
+      <class name="webdriver.Topic_07_WebLoginExercise">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:webdriver.Topic_07_WebLoginExercise@17f62e33]" started-at="2025-06-22T07:46:04Z" name="beforeClass" finished-at="2025-06-22T07:46:06Z" duration-ms="2178" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="TC_06_MailChimp_AssertAllTrue()[pri:0, instance:webdriver.Topic_06_WebElementExercise@4c60d6e9]" started-at="2025-06-07T09:53:54Z" name="TC_06_MailChimp_AssertAllTrue" finished-at="2025-06-07T09:54:09Z" duration-ms="14349" status="PASS">
+        <test-method signature="TC_01_LoginWithEmptyEmailAndPassword()[pri:0, instance:webdriver.Topic_07_WebLoginExercise@17f62e33]" started-at="2025-06-22T07:46:06Z" name="TC_01_LoginWithEmptyEmailAndPassword" finished-at="2025-06-22T07:46:19Z" duration-ms="12735" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC_06_MailChimp_AssertAllTrue -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:webdriver.Topic_06_WebElementExercise@4c60d6e9]" started-at="2025-06-07T09:54:09Z" name="afterClass" finished-at="2025-06-07T09:54:10Z" duration-ms="1047" status="PASS">
+        </test-method> <!-- TC_01_LoginWithEmptyEmailAndPassword -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:webdriver.Topic_07_WebLoginExercise@17f62e33]" started-at="2025-06-22T07:46:19Z" name="afterClass" finished-at="2025-06-22T07:46:20Z" duration-ms="648" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- webdriver.Topic_06_WebElementExercise -->
+      </class> <!-- webdriver.Topic_07_WebLoginExercise -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
