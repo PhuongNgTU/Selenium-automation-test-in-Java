@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-22T07:46:04Z" name="Default suite" finished-at="2025-06-22T07:46:20Z" duration-ms="15570">
+  <suite started-at="2025-06-28T07:44:38Z" name="Default suite" finished-at="2025-06-28T07:44:50Z" duration-ms="12480">
     <groups>
     </groups>
-    <test started-at="2025-06-22T07:46:04Z" name="Default test" finished-at="2025-06-22T07:46:20Z" duration-ms="15570">
+    <test started-at="2025-06-28T07:44:38Z" name="Default test" finished-at="2025-06-28T07:44:50Z" duration-ms="12480">
       <class name="webdriver.Topic_07_WebLoginExercise">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:webdriver.Topic_07_WebLoginExercise@17f62e33]" started-at="2025-06-22T07:46:04Z" name="beforeClass" finished-at="2025-06-22T07:46:06Z" duration-ms="2178" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:webdriver.Topic_07_WebLoginExercise@76b1e9b8]" started-at="2025-06-28T07:44:38Z" name="beforeClass" finished-at="2025-06-28T07:44:40Z" duration-ms="2116" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="TC_01_LoginWithEmptyEmailAndPassword()[pri:0, instance:webdriver.Topic_07_WebLoginExercise@17f62e33]" started-at="2025-06-22T07:46:06Z" name="TC_01_LoginWithEmptyEmailAndPassword" finished-at="2025-06-22T07:46:19Z" duration-ms="12735" status="PASS">
+        <test-method signature="TC_02_LoginWithInvalidEmail()[pri:0, instance:webdriver.Topic_07_WebLoginExercise@76b1e9b8]" started-at="2025-06-28T07:44:40Z" name="TC_02_LoginWithInvalidEmail" finished-at="2025-06-28T07:44:50Z" duration-ms="9673" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC_01_LoginWithEmptyEmailAndPassword -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:webdriver.Topic_07_WebLoginExercise@17f62e33]" started-at="2025-06-22T07:46:19Z" name="afterClass" finished-at="2025-06-22T07:46:20Z" duration-ms="648" status="PASS">
+        </test-method> <!-- TC_02_LoginWithInvalidEmail -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:webdriver.Topic_07_WebLoginExercise@76b1e9b8]" started-at="2025-06-28T07:44:50Z" name="afterClass" finished-at="2025-06-28T07:44:50Z" duration-ms="680" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->

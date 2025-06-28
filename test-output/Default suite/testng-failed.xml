@@ -5,7 +5,7 @@
     <classes>
       <class name="webdriver.Topic_07_WebLoginExercise">
         <methods>
-          <include name="TC_01_LoginWithEmptyEmailAndPassword"/>
+          <include name="TC_02_LoginWithInvalidEmail"/>
           <include name="beforeClass"/>
           <include name="afterClass"/>
         </methods>
