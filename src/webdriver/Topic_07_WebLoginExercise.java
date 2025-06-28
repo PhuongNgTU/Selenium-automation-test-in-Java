@@ -49,6 +49,42 @@ public class Topic_07_WebLoginExercise {
 		driver.findElement(By.xpath("//input[@id='pass']/following-sibling::div[@id='advice-required-entry-pass']")).isDisplayed();
 	}
 	
+	@Test
+	public void TC_02_LoginWithInvalidEmail() {
+		driver.get("https://live.techpanda.org/");
+		
+		driver.findElement(By.xpath("//span[@class='label' and contains(text(), 'Account')]")).click();
+		var myAccountElement = "//div[@id='header-account']/descendant::a[@title='My Account' and contains(text(), 'My Account')]";
+		driver.findElement(By.xpath(myAccountElement)).isDisplayed();
+		driver.findElement(By.xpath(myAccountElement)).click();
+		
+		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("12341234@12312.123123");
+		driver.findElement(By.xpath("//input[@id='pass']")).sendKeys("123456");
+		
+		driver.findElement(By.xpath("//button[@id='send2']")).click();
+		sleepInSeconds(3);
+		
+		driver.findElement(By.xpath("//div[contains(text(), \"Please enter a valid email address. For example johndoe@domain.com.\")]")).isDisplayed();
+	}
+	
+	@Test
+	public void TC_03_LoginWithInvalidPassword() {
+		driver.get("https://live.techpanda.org/");
+		
+		driver.findElement(By.xpath("//span[@class='label' and contains(text(), 'Account')]")).click();
+		var myAccountElement = "//div[@id='header-account']/descendant::a[@title='My Account' and contains(text(), 'My Account')]";
+		driver.findElement(By.xpath(myAccountElement)).isDisplayed();
+		driver.findElement(By.xpath(myAccountElement)).click();
+		
+		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("jean.tyderman1996@gmail.com");
+		driver.findElement(By.xpath("//input[@id='pass']")).sendKeys("123");
+		
+		driver.findElement(By.xpath("//button[@id='send2']")).click();
+		sleepInSeconds(3);
+		
+		driver.findElement(By.xpath("//div[contains(text(), \"Please enter 6 or more characters without leading or trailing spaces.\")]")).isDisplayed();
+	}
+	
 	public void sleepInSeconds(long timeInSecond) {
 		try {
 			Thread.sleep(timeInSecond * 1000);
