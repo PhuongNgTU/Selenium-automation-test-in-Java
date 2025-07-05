@@ -5,9 +5,8 @@
     <classes>
       <class name="webdriver.Topic_07_WebLoginExercise">
         <methods>
-          <include name="TC_02_LoginWithInvalidEmail"/>
           <include name="beforeClass"/>
-          <include name="afterClass"/>
+          <include name="TC_05_CreateNewAccount"/>
         </methods>
       </class> <!-- webdriver.Topic_07_WebLoginExercise -->
     </classes>
