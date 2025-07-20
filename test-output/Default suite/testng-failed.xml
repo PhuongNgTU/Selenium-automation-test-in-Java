@@ -5,8 +5,8 @@
     <classes>
       <class name="webdriver.Topic_07_WebLoginExercise">
         <methods>
+          <include name="TC_06_LoginWithValidAccount"/>
           <include name="beforeClass"/>
-          <include name="TC_05_CreateNewAccount"/>
         </methods>
       </class> <!-- webdriver.Topic_07_WebLoginExercise -->
     </classes>

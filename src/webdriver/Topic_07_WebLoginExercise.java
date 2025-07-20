@@ -20,7 +20,8 @@ public class Topic_07_WebLoginExercise {
 	String osName = System.getProperty("os.name");
 	String emailAddress;
 	String password;
-	String = 
+	String firstName;
+	String lastName;
 	
 	//Define reused element into global variable by using 'By' variable	
 
@@ -35,6 +36,8 @@ public class Topic_07_WebLoginExercise {
 		rand = new Random();
 		emailAddress = "jean.tyderman" + rand.nextInt(1000) + "@gmail.com";
 		password = "NozzaGrande" + rand.nextInt(10);
+		firstName = "helge";
+		lastName = "doppler";
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
@@ -42,7 +45,7 @@ public class Topic_07_WebLoginExercise {
 	
 	@Test
 	public void TC_01_LoginWithEmptyEmailAndPassword() {
-		driver.get("https://live.techpanda.org/");
+		websiteUrl();
 		
 		driver.findElement(By.xpath("//span[@class='label' and contains(text(), 'Account')]")).click();
 		var myAccountElement = "//div[@id='header-account']/descendant::a[@title='My Account' and contains(text(), 'My Account')]";
@@ -58,7 +61,7 @@ public class Topic_07_WebLoginExercise {
 	
 	@Test
 	public void TC_02_LoginWithWrongEmailFormat() {
-		driver.get("https://live.techpanda.org/");
+		websiteUrl();
 		
 		driver.findElement(By.xpath("//span[@class='label' and contains(text(), 'Account')]")).click();
 		var myAccountElement = "//div[@id='header-account']/descendant::a[@title='My Account' and contains(text(), 'My Account')]";
@@ -94,8 +97,7 @@ public class Topic_07_WebLoginExercise {
 	
 	@Test
 	public void TC_04_LoginWithIncorrectEmail() {
-		driver.get("https://live.techpanda.org/");
-		
+		websiteUrl();
 		
 		driver.findElement(By.xpath("//span[@class='label' and contains(text(), 'Account')]")).click();
 		var myAccountElement = "//div[@id='header-account']/descendant::a[@title='My Account' and contains(text(), 'My Account')]";
@@ -115,30 +117,58 @@ public class Topic_07_WebLoginExercise {
 	
 	@Test
 	public void TC_05_CreateNewAccount() {
-		driver.get("https://live.techpanda.org/");
+		websiteUrl();
 		
-		driver.findElement(By.xpath("//span[@class='label' and contains(text(), 'Account')]")).click();
-		var myAccountElement = "//div[@id='header-account']/descendant::a[@title='My Account' and contains(text(), 'My Account')]";
-		driver.findElement(By.xpath(myAccountElement)).isDisplayed();
-		driver.findElement(By.xpath(myAccountElement)).click();
+		driver.findElement(By.xpath("//div[@class='footer']//a[@title='My Account']")).click();
+		sleepInSeconds(3);
 		
-		driver.findElement(By.xpath("//a[@title='Create an Account']")).click();
-		Assert.assertEquals(driver.getCurrentUrl(), "https://live.techpanda.org/index.php/customer/account/create/");
+		driver.findElement(By.cssSelector("a[title='Create an Account']")).click();
+		sleepInSeconds(3);
 		
-		driver.findElement(By.xpath("//input[@id='firstname']")).sendKeys("Phuong");
-		driver.findElement(By.xpath("//input[@id='lastname']")).sendKeys("Nguyen");
-		driver.findElement(By.xpath("//input[@id='email_address']")).sendKeys(emailAddress);
-		driver.findElement(By.xpath("//input[@id='password']")).sendKeys(password);
-		driver.findElement(By.xpath("//input[@id='confirmation']")).sendKeys(password);
+		driver.findElement(By.id("firstname")).sendKeys("helge");
+		driver.findElement(By.id("lastname")).sendKeys("doppler");
+		driver.findElement(By.id("email_address")).sendKeys(emailAddress);
+		driver.findElement(By.id("password")).sendKeys(password);
+		driver.findElement(By.id("confirmation")).sendKeys(password);
 		System.out.println(password);
-		driver.findElement(By.xpath("//button[@title='Register']")).click();
+		driver.findElement(By.cssSelector("button[title='Register']")).click();
 		driver.switchTo().alert().accept(); // Handle alert from browser
 		sleepInSeconds(3);
 		
-		//Assert
-		Assert.assertEquals(driver.getCurrentUrl(), "https://live.techpanda.org/index.php/customer/account/index/");
-		Assert.assertEquals(driver.findElement(By.xpath("//li[@class='success-msg']")).getText(), "Thank you for registering with Main Website Store.");
-		Assert.assertEquals(driver.findElement(By.xpath("//div[@class='welcome-msg']")).getText(), "Hello, "+"!");
+		//Assert: Register successfully
+		Assert.assertEquals(driver.findElement(By.cssSelector("li.success-msg span")).getText(), "Thank you for registering with Main Website Store.");
+		String contactInformationText = driver.findElement(By.xpath("//h3[text()='Contact Information']/parent::div/following-sibling::div/p")).getText();
+		System.out.println(contactInformationText);
+		Assert.assertTrue(contactInformationText.contains(firstName + " " + lastName));
+		System.out.println(firstName + " " + lastName);
+		Assert.assertTrue(contactInformationText.contains(emailAddress));
+		
+		//Log out
+		driver.findElement(By.xpath("//div[@class='account-cart-wrapper']//span[text()='Account']")).click();
+		driver.findElement(By.xpath("//a[@title='Log Out']")).click();
+		Assert.assertTrue(driver.findElement(By.xpath("//img[contains(@src, 'logo.png')]")).isDisplayed());
+	}
+	
+	@Test
+	public void TC_06_LoginWithValidAccount() {
+		websiteUrl();
+		
+		driver.findElement(By.xpath("//div[@class='footer']//a[@title='My Account']")).click();
+		sleepInSeconds(3);
+		
+		driver.findElement(By.id("email")).sendKeys("jean.tyderman834@gmail.com");
+		driver.findElement(By.id("pass")).sendKeys("NozzaGrande6");
+		driver.findElement(By.id("send2")).click();
+		
+		// Handle alert from browser
+		driver.switchTo().alert().accept(); 
+		sleepInSeconds(3);
+		
+		//Assert: Register successfully
+		String contactInformationText = driver.findElement(By.xpath("//h3[text()='Contact Information']/parent::div/following-sibling::div/p")).getText();
+		Assert.assertTrue(contactInformationText.contains(firstName + " " + lastName));
+		System.out.println(firstName + " " + lastName);
+		Assert.assertTrue(contactInformationText.contains("jean.tyderman834@gmail.com"));
 	}
 	
 	public void sleepInSeconds(long timeInSecond) {
@@ -149,9 +179,14 @@ public class Topic_07_WebLoginExercise {
 		} //1000ms = 1s
 	}
 	
-	/*@AfterTest
+	public void websiteUrl() {
+		driver.get("https://live.techpanda.org/");
+		sleepInSeconds(3);
+	}
+	
+	@AfterTest
 	public void afterClass() {
 		driver.quit();
-	}*/
+	}
 
 }
