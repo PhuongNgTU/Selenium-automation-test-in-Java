@@ -18,12 +18,12 @@ public class Topic_07_WebLoginExercise {
 	Random rand;
 	String projectPath = System.getProperty("user.dir");
 	String osName = System.getProperty("os.name");
+	
+	//Define reused element into global variable by using 'By' variable	
 	String emailAddress;
 	String password;
 	String firstName;
 	String lastName;
-	
-	//Define reused element into global variable by using 'By' variable	
 
 	@BeforeTest
 	public void beforeClass() {
