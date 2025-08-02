@@ -1,5 +1,6 @@
 package webdriver;
 
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
@@ -15,7 +16,7 @@ import org.openqa.selenium.Alert;
 
 public class Topic_08_WebTextBoxAndTextAreaExercise {
 	WebDriver driver;
-	Random rand;
+	Random rand = new Random();
 	String projectPath = System.getProperty("user.dir");
 	String osName = System.getProperty("os.name");
 	
@@ -24,6 +25,7 @@ public class Topic_08_WebTextBoxAndTextAreaExercise {
 	String password;
 	String firstName;
 	String lastName;
+	String employeeId = String.valueOf(rand.nextInt(99999));
 	
 	/* Textbox ko thể xuống dòng 
 	<input type='text'> <br> 
@@ -47,7 +49,6 @@ public class Topic_08_WebTextBoxAndTextAreaExercise {
 			System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
 		}
 		
-		rand = new Random();
 		emailAddress = "jean.tyderman" + rand.nextInt(1000) + "@gmail.com";
 		password = "NozzaGrande" + rand.nextInt(10);
 		firstName = "helge";
@@ -58,8 +59,17 @@ public class Topic_08_WebTextBoxAndTextAreaExercise {
 	}
 	
 	@Test
-	public void TC() {
+	public void TC01_CreateNewEmployee() {
+		websiteUrl();
+		driver.findElement(By.name("username")).sendKeys("Admin");
+		driver.findElement(By.name("password")).sendKeys("admin123");
+		driver.findElement(By.cssSelector("button.orangehrm-login-button")).click();
+		sleepInSeconds(5);
 		
+		driver.findElement(By.cssSelector("a[href*='viewPimModule']")).click();
+		sleepInSeconds(5);
+		
+		driver.findElement(By.xpath("//a[text()='Add Employee']")).click();
 	}
 	
 	public void sleepInSeconds(long timeInSecond) {
@@ -71,7 +81,7 @@ public class Topic_08_WebTextBoxAndTextAreaExercise {
 	}
 	
 	public void websiteUrl() {
-		driver.get("https://live.techpanda.org/");
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		sleepInSeconds(3);
 	}
 	
